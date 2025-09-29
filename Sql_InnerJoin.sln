@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sql_InnerJoin", "Sql_InnerJoin\Sql_InnerJoin.csproj", "{29073F2A-8637-474B-8FDA-2C84B159C351}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29073F2A-8637-474B-8FDA-2C84B159C351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29073F2A-8637-474B-8FDA-2C84B159C351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29073F2A-8637-474B-8FDA-2C84B159C351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29073F2A-8637-474B-8FDA-2C84B159C351}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26EEE9E1-6923-4268-A5B2-D1052E7D8A54}
+	EndGlobalSection
+EndGlobal

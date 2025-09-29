@@ -10,7 +10,7 @@ namespace Sql_InnerJoin
     public partial class Form1 : Form
     {
 
-        private string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=AdventureWorks2022;Integrated Security=True;";
+        private string connectionString = "Server=localhost\\SQLEXPRESS01;Database=AdventureWorks2022;Trusted_Connection=True;Encrypt=False;";
         public Form1()
         {
             InitializeComponent();
@@ -23,43 +23,43 @@ namespace Sql_InnerJoin
             switch (ComBoxSeleccion.SelectedIndex)
             {
                 case 0:
-                    query = "SELECT p.ProductID, p.Name AS ProductName, s.Name AS SubCategory \nFROM Production.Product p \nINNER JOIN Production.ProductSubcategory s \nON p.ProductSubcategoryID = s.ProductSubcategoryID;";
+                    query = "SELECT * FROM Vista_Producto_SubCategoria";
                     break;
-
+                    TEST
                 case 1:
-                    query = "SELECT s.Name AS SubCategory, c.Name AS Category  \nFROM Production.ProductSubcategory s  \nINNER JOIN Production.ProductCategory c  \nON s.ProductCategoryID = c.ProductCategoryID;";
+                    query = "SELECT * FROM Vista_SubCategoria_Categoria";
                     break;
 
                 case 2:
-                    query = "SELECT p.ProductID, p.Name AS ProductName, c.Name AS Category\nFROM Production.Product p\nINNER JOIN Production.ProductSubcategory s ON p.ProductSubcategoryID = s.ProductSubcategoryID\nINNER JOIN Production.ProductCategory c ON s.ProductCategoryID = c.ProductCategoryID;";
+                    query = "SELECT * FROM Vista_Producto_Subcategoria_Producto";
                     break;
 
                 case 3:
-                    query = "SELECT p.ProductID, p.Name, ph.ThumbnailPhotoFileName, ph.LargePhotoFileName\nFROM Production.Product p\nINNER JOIN Production.ProductProductPhoto pp ON p.ProductID = pp.ProductID\nINNER JOIN Production.ProductPhoto ph ON pp.ProductPhotoID = ph.ProductPhotoID;";
+                    query = "SELECT * FROM Vista_Producto_Fotos ";
                     break;
 
                 case 4:
-                    query = "SELECT p.ProductID, p.Name, r.ReviewerName, r.Rating, r.Comments\nFROM Production.Product p\nINNER JOIN Production.ProductReview r ON p.ProductID = r.ProductID;";
+                    query = "SELECT * FROM Vista_Producto_Reseña";
                     break;
 
                 case 5:
-                    query = "SELECT p.ProductID, p.Name, i.LocationID, i.Quantity\nFROM Production.Product p\nINNER JOIN Production.ProductInventory i ON p.ProductID = i.ProductID;";
+                    query = "SELECT * FROM Vista_Producto_InventarioBodega";
                     break;
 
                 case 6:
-                    query = "SELECT i.ProductID, l.LocationID, l.Name AS LocationName, i.Quantity\nFROM Production.ProductInventory i\nINNER JOIN Production.Location l ON i.LocationID = l.LocationID;";
+                    query = "SELECT * FROM Vista_Inventario_Ubicacion";
                     break;
 
                 case 7:
-                    query = "SELECT p.ProductID, p.Name, w.WorkOrderID, w.OrderQty, w.ScrappedQty\nFROM Production.Product p\nINNER JOIN Production.WorkOrder w ON p.ProductID = w.ProductID;";
+                    query = "SELECT * FROM Vista_Producto_OrdenesTrabajo";
                     break;
 
                 case 8:
-                    query = "SELECT w.WorkOrderID, w.ProductID, w.ScrappedQty, s.Name AS ScrapReason\nFROM Production.WorkOrder w\nINNER JOIN Production.ScrapReason s ON w.ScrapReasonID = s.ScrapReasonID;";
+                    query = "SELECT * FROM Vista_OrdenesTrabajo_RazonDespido";
                     break;
 
                 case 9:
-                    query = "SELECT p.ProductID, p.Name, t.TransactionID, t.TransactionDate, t.Quantity, t.ActualCost\nFROM Production.Product p\nINNER JOIN Production.TransactionHistory t ON p.ProductID = t.ProductID;";
+                    query = "SELECT * FROM Vista_Producto_Historial";
                     break;
 
                 default:
@@ -67,7 +67,7 @@ namespace Sql_InnerJoin
                     return;
             }
             // Ahora ejecutamos la consulta y mostramos en un DataGridView
-            using (SqlConnection con = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=AdventureWorks2022;Trusted_Connection=True;Encrypt=False;"))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();

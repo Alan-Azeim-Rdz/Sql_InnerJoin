@@ -10,7 +10,7 @@ namespace Sql_InnerJoin
     public partial class Form1 : Form
     {
 
-        private string connectionString = "Server=localhost\\SQLEXPRESS01;Database=AdventureWorks2022;Trusted_Connection=True;Encrypt=False;";
+        private string connectionString = "Server=192.168.1.13\\SQLEXPRESS,1433;Database=AdventureWorks2022;User Id=TEST;Password=12345678;Encrypt=False;";
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +25,6 @@ namespace Sql_InnerJoin
                 case 0:
                     query = "SELECT * FROM Vista_Producto_SubCategoria";
                     break;
-                    TEST
                 case 1:
                     query = "SELECT * FROM Vista_SubCategoria_Categoria";
                     break;
@@ -35,7 +34,7 @@ namespace Sql_InnerJoin
                     break;
 
                 case 3:
-                    query = "SELECT * FROM Vista_Producto_Fotos ";
+                    query = "SELECT * FROM Vista_Producto_Fotos";
                     break;
 
                 case 4:
@@ -43,7 +42,7 @@ namespace Sql_InnerJoin
                     break;
 
                 case 5:
-                    query = "SELECT * FROM Vista_Producto_InventarioBodega";
+                    query = "SELECT * FROM Vista_Producto_Inventario";
                     break;
 
                 case 6:

@@ -11,6 +11,7 @@ namespace Sql_InnerJoin
     {
 
         private string connectionString = "Server=192.168.1.13\\SQLEXPRESS,1433;Database=AdventureWorks2022;User Id=TEST;Password=12345678;Encrypt=False;";
+
         public Form1()
         {
             InitializeComponent();
